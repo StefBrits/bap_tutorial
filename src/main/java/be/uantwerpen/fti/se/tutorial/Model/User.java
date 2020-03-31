@@ -3,10 +3,7 @@ package be.uantwerpen.fti.se.tutorial.Model;
 import be.uantwerpen.fti.se.tutorial.Model.Role;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+
 import java.util.List;
 
 public class User {
