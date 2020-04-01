@@ -33,7 +33,7 @@ public class HomeController {
     }
 
 
-Anita is omo en <span th:text="${app.name}"/>
+<span th:text="${app.name}"/>
 <span th:text="${testje.testNaam}"/> is echt epic
 
  */
@@ -47,17 +47,17 @@ Anita is omo en <span th:text="${app.name}"/>
 
     @Autowired
     private GeneratorBlock generatorBlock;
-    @Autowired
-    private Application application;
-    //@Autowired
-    //private DustBlock testBlock;
     @GetMapping("/test")
     @ResponseBody
     public String showTest(){
 
+        //aanmaken testobject om naar JSON te parsen
+        Application application = new Application();
+        DustBlock testBlock = new DustBlock();
+
         application.setName("TestApplicatie");
-        //testBlock.setName("Block1");
-        //application.addDustBlock(testBlock);
+        testBlock.setName("Block1");
+        application.addDustBlock(testBlock);
         return generatorBlock.generateConfig(application);
     }
 

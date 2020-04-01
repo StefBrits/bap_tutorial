@@ -11,4 +11,5 @@ public class GeneratorBlock {
         JsonBuilder json = new JsonBuilder();
         return json.makeJson(application);
     }
+
 }

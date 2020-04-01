@@ -4,11 +4,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
+
 public class DustBlock {
     String name = "dustBlockName";
-    //ArrayList<Channel> channels;
+    Link link;
 
+    public DustBlock() {
+    }
 
     public String getName() {
         return name;
@@ -16,5 +18,13 @@ public class DustBlock {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Link getLink() {
+        return link;
+    }
+
+    public void setLink(Link link) {
+        this.link = link;
     }
 }

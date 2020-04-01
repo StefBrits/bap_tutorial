@@ -10,10 +10,10 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 
-public class JsonBuilder {
+public class JsonBuilder { //excludeFieldsWithoutExposeAnnotation().
     public String makeJson(Application application){
-        //Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        //Gson gson = new Gson();
         String json = gson.toJson(application);
         return json;
     }

@@ -4,11 +4,14 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
+
 public class Application {
     String name= "";
     //ArrayList<Template> templates;
-    ArrayList<DustBlock> dustBlocks;
+    ArrayList<DustBlock> dustBlocks = new ArrayList<DustBlock>();
+
+    public Application() {
+    }
 
     public String getName() {
         return name;
@@ -27,6 +30,7 @@ public class Application {
     }
 
     public void addDustBlock(DustBlock dustBlock) {
+
         this.dustBlocks.add(dustBlock);
     }
 }
