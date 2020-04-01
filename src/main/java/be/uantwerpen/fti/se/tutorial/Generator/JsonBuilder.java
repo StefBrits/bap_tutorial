@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.se.tutorial;
+package be.uantwerpen.fti.se.tutorial.Generator;
 
 import be.uantwerpen.fti.se.tutorial.Model.Application;
 import com.google.gson.Gson;

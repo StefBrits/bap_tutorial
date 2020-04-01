@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class Template {
     @Expose
-    String name;
+    String name = "example-template";
     @Expose
-    ArrayList<Transport> transports_T = new ArrayList<>();
+    ArrayList<Transport> transports = new ArrayList<>();
     @Expose
-    ArrayList<Addon> addons_T = new ArrayList<>();
+    ArrayList<Addon> addons = new ArrayList<>();
 
     public Template() {
 
@@ -24,28 +24,28 @@ public class Template {
         this.name = name;
     }
 
-    public ArrayList<Transport> getTransports_T() {
-        return transports_T;
+    public ArrayList<Transport> getTransports() {
+        return transports;
     }
 
-    public void setTransports_T(ArrayList<Transport> transports_T) {
-        this.transports_T = transports_T;
+    public void setTransports(ArrayList<Transport> transports) {
+        this.transports = transports;
     }
 
-    public ArrayList<Addon> getAddons_T() {
-        return addons_T;
+    public ArrayList<Addon> getAddons() {
+        return addons;
     }
 
-    public void setAddons_T(ArrayList<Addon> addons_T) {
-        this.addons_T = addons_T;
+    public void setAddons(ArrayList<Addon> addons) {
+        this.addons = addons;
     }
 
     public void addTransport_T(Transport transport) {
-        this.transports_T.add(transport);
+        this.transports.add(transport);
     }
 
     public void addAddon_T(Addon addon) {
-        this.addons_T.add(addon);
+        this.addons.add(addon);
     }
 
 }

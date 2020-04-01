@@ -1,15 +1,12 @@
 package be.uantwerpen.fti.se.tutorial.Controller;
 
-import be.uantwerpen.fti.se.tutorial.GeneratorBlock;
+import be.uantwerpen.fti.se.tutorial.Generator.GeneratorBlock;
 import be.uantwerpen.fti.se.tutorial.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 @Controller
 public class HomeController {
@@ -42,8 +39,8 @@ public class HomeController {
 
 
         //nieuwe DUST block toevoegen aan applicatie en een link + naam geven
-        testBlock.setName("Publisher");
-        testBlock2.setName("Subscriber");
+        testBlock.setName("publisher");
+        testBlock2.setName("subscriber");
         testapplication.addDustBlock(testBlock);
         testapplication.addDustBlock(testBlock2);
         testBlock.setLink(testLink);

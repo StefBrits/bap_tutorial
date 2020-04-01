@@ -1,5 +1,6 @@
-package be.uantwerpen.fti.se.tutorial;
+package be.uantwerpen.fti.se.tutorial.Generator;
 
+import be.uantwerpen.fti.se.tutorial.Generator.JsonBuilder;
 import be.uantwerpen.fti.se.tutorial.Model.Application;
 import org.springframework.stereotype.Component;
 
