@@ -1,12 +1,20 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 
 public class Channel {
+    @Expose
     String name;
-    ArrayList<Addon> addons;
+    @Expose
+    ArrayList<Addon> addons = new ArrayList<>();
+    @Expose
     Transport transport;
-    ArrayList<Template> templates;
+    //ArrayList<Template> templates = new ArrayList<>();
+    @Expose
+    Template template;
+
 
     public Channel() {
     }
@@ -35,6 +43,7 @@ public class Channel {
         this.transport = transport;
     }
 
+    /*
     public ArrayList<Template> getTemplates() {
         return templates;
     }
@@ -43,11 +52,19 @@ public class Channel {
         this.templates = templates;
     }
 
+    public void addTemplates(Template template) {
+        this.templates.add(template);
+    }
+    */
     public void addAddon(Addon addon) {
         this.addons.add(addon);
     }
 
-    public void addTemplates(Template template) {
-        this.templates.add(template);
+    public Template getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(Template template) {
+        this.template = template;
     }
 }

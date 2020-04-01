@@ -1,14 +1,16 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
-import org.springframework.stereotype.Component;
+import com.google.gson.annotations.Expose;
 
 import java.util.ArrayList;
 
 
 public class Application {
     String name= "";
-    //ArrayList<Template> templates;
-    ArrayList<DustBlock> dustBlocks = new ArrayList<DustBlock>();
+    @Expose
+    ArrayList<Template> _templates = new ArrayList<>();
+    @Expose
+    ArrayList<DustBlock> dustBlocks = new ArrayList<>();
 
     public Application() {
     }
@@ -32,5 +34,17 @@ public class Application {
     public void addDustBlock(DustBlock dustBlock) {
 
         this.dustBlocks.add(dustBlock);
+    }
+
+    public ArrayList<Template> get_templates() {
+        return _templates;
+    }
+
+    public void set_templates(ArrayList<Template> _templates) {
+        this._templates = _templates;
+    }
+
+    public void addTemplate(Template template) {
+        this._templates.add(template);
     }
 }

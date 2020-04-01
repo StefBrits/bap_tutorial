@@ -1,10 +1,13 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 
 public class Link {
-    ArrayList<Channel> channels;
-    String name = "linkname";
+    @Expose
+    ArrayList<Channel> channels = new ArrayList<>();
+
 
     public Link() {
     }
@@ -19,13 +22,5 @@ public class Link {
 
     public void addChannel(Channel channel) {
         this.channels.add(channel);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

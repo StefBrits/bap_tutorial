@@ -1,14 +1,9 @@
 package be.uantwerpen.fti.se.tutorial.Controller;
 
 import be.uantwerpen.fti.se.tutorial.GeneratorBlock;
-import be.uantwerpen.fti.se.tutorial.Model.DustBlock;
-import be.uantwerpen.fti.se.tutorial.Service.UserService;
-import be.uantwerpen.fti.se.tutorial.Model.Application;
-import be.uantwerpen.fti.se.tutorial.Model.Test;
-import be.uantwerpen.fti.se.tutorial.Model.User;
+import be.uantwerpen.fti.se.tutorial.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,32 +14,6 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-/*
-    @RequestMapping({"/","/home"})
-    public String showHomepage(ModelMap model) {
-        User user = new User("Stef","Brits");
-        Application application = new Application("Als je dit leest heeft stef het gefixt en ben je omo");
-        Test test = new Test("sneffiepooh");
-        model.addAttribute("usertje",user);
-        model.addAttribute("app", application);
-        model.addAttribute("testje", test);
-
-        return "homepage";
-    }
-
-
-<span th:text="${app.name}"/>
-<span th:text="${testje.testNaam}"/> is echt epic
-
- */
-
-    @Autowired
-    private UserService userService;
-    @ModelAttribute("allUsers")
-    public List<User> populateUsers() {
-        return this.userService.findAll();
-    }
-
     @Autowired
     private GeneratorBlock generatorBlock;
     @GetMapping("/test")
@@ -52,13 +21,66 @@ public class HomeController {
     public String showTest(){
 
         //aanmaken testobject om naar JSON te parsen
-        Application application = new Application();
+        Application testapplication = new Application();
         DustBlock testBlock = new DustBlock();
+        DustBlock testBlock2 = new DustBlock();
+        Link testLink = new Link();
+        Link testLink2 = new Link();
+        Channel testChannel = new Channel();
+        Channel testChannel2 = new Channel();
+        Addon testAddon = new Addon();
+        Transport testTransport = new Transport();
+        Transport testTransport2 = new Transport();
 
-        application.setName("TestApplicatie");
-        testBlock.setName("Block1");
-        application.addDustBlock(testBlock);
-        return generatorBlock.generateConfig(application);
+        Template testTemplate = new Template();
+        Transport testTransport_T = new Transport();
+        Addon testAddon_T = new Addon();
+
+        //nieuwe applicatie
+        testapplication.setName("TestApplicatie");
+        testapplication.addTemplate(testTemplate);
+
+
+        //nieuwe DUST block toevoegen aan applicatie en een link + naam geven
+        testBlock.setName("Publisher");
+        testBlock2.setName("Subscriber");
+        testapplication.addDustBlock(testBlock);
+        testapplication.addDustBlock(testBlock2);
+        testBlock.setLink(testLink);
+        testBlock2.setLink(testLink2);
+
+        //link een naam en channel geven
+        testLink.addChannel(testChannel);
+        testLink2.addChannel(testChannel2);
+
+        //channel naam en template geven
+        //testChannel.addAddon(testAddon);
+        testChannel.setTemplate(testTemplate);
+        testChannel.setName("publish-tcp");
+        testChannel2.setTemplate(testTemplate);
+        testChannel2.setName("subscribe-tcp");
+
+        //batch addon type en size geven
+        testAddon.setBatch_size(2);
+        testAddon.setType("Batch");
+
+        testTransport.setPublish(true);
+        testTransport.setHost_server(false);
+
+        testTransport2.setPublish(false);
+        testTransport2.setHost_server(true);
+
+        testAddon_T.setType("templateAddonType");
+        testAddon_T.setBatch_size(12);
+
+        testTemplate.addAddon_T(testAddon_T);
+        testTemplate.addTransport_T(testTransport_T);
+
+        ////////////////////////////////////////////////////
+
+
+
+        return generatorBlock.generateConfig(testapplication);
     }
 
 

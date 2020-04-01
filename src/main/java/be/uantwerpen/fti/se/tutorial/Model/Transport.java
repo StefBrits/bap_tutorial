@@ -1,11 +1,19 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
+import com.google.gson.annotations.Expose;
+
 public class Transport {
+    @Expose
     String type;
+    @Expose
     String protocol;
+    @Expose
     String address;
+    @Expose
     int port;
+    @Expose
     boolean publish;
+    @Expose
     boolean host_server;
 
     public Transport() {

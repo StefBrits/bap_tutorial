@@ -1,12 +1,15 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
+import com.google.gson.annotations.Expose;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
 
 public class DustBlock {
+    @Expose
     String name = "dustBlockName";
+    @Expose
     Link link;
 
     public DustBlock() {
