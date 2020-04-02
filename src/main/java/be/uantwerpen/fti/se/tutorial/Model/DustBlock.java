@@ -31,4 +31,12 @@ public class DustBlock {
     public void setLink(Link link) {
         this.link = link;
     }
+
+    @Override
+    public String toString() {
+        return "DustBlock{" +
+                "name='" + name + '\'' +
+                ", link=" + link +
+                '}';
+    }
 }
