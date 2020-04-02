@@ -2,13 +2,14 @@ package be.uantwerpen.fti.se.tutorial.Model;
 
 import com.google.gson.annotations.Expose;
 
-public class Addon {
+public class Addon_Template {
+
     @Expose
     String type = "default-addon-type";
     @Expose
     int batch_size;
 
-    public Addon() {
+    public Addon_Template() {
 
     }
 

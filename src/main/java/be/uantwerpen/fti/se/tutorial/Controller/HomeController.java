@@ -31,7 +31,11 @@ public class HomeController {
 
         Template testTemplate = new Template();
         Transport testTransport_T = new Transport();
+        Transport_Template testTransport_Template = new Transport_Template();
         Addon testAddon_T = new Addon();
+        Addon_Template testAddon_Template = new Addon_Template();
+
+
 
         //nieuwe applicatie
         testapplication.setName("TestApplicatie");
@@ -56,22 +60,35 @@ public class HomeController {
         testChannel.setName("publish-tcp");
         testChannel2.setTemplate(testTemplate);
         testChannel2.setName("subscribe-tcp");
+        testChannel.addAddon(testAddon);
+        testChannel2.addAddon(testAddon);
+        testChannel.setTransport(testTransport);
+        testChannel2.setTransport(testTransport2);
+
 
         //batch addon type en size geven
         testAddon.setBatch_size(2);
         testAddon.setType("Batch");
 
+
         testTransport.setPublish(true);
         testTransport.setHost_server(false);
+
+
 
         testTransport2.setPublish(false);
         testTransport2.setHost_server(true);
 
-        testAddon_T.setType("templateAddonType");
-        testAddon_T.setBatch_size(12);
+        testTransport_Template.setType("socket");
+        testTransport_Template.setProtocol("tcp");
+        testTransport_Template.setAddress("127.0.0.1");
+        testTransport_Template.setPort(3000);
 
-        testTemplate.addAddon_T(testAddon_T);
-        testTemplate.addTransport_T(testTransport_T);
+        testAddon_Template.setType("batch");
+        testAddon_Template.setBatch_size(2);
+
+        testTemplate.addAddon_T(testAddon_Template);
+        testTemplate.addTransport_T(testTransport_Template);
 
         ////////////////////////////////////////////////////
 

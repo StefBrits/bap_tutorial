@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Channel {
     @Expose
-    String name;
+    String name = "default-channel-name";
     @Expose
     ArrayList<Addon> addons = new ArrayList<>();
     @Expose

@@ -1,6 +1,7 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class DustBlock {
     @Expose
-    String name = "dustBlockName";
+    String name = "default-block-name";
     @Expose
     Link link;
 

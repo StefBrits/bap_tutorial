@@ -6,11 +6,12 @@ import java.util.ArrayList;
 
 
 public class Application {
-    String name= "";
+    String name= "default-application-name";
     @Expose
     ArrayList<Template> _templates = new ArrayList<>();
     @Expose
     ArrayList<DustBlock> dustBlocks = new ArrayList<>();
+
 
     public Application() {
     }

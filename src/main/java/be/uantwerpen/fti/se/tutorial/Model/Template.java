@@ -8,9 +8,9 @@ public class Template {
     @Expose
     String name = "example-template";
     @Expose
-    ArrayList<Transport> transports = new ArrayList<>();
+    ArrayList<Addon_Template> addons = new ArrayList<>();
     @Expose
-    ArrayList<Addon> addons = new ArrayList<>();
+    ArrayList<Transport_Template> transports = new ArrayList<>();
 
     public Template() {
 
@@ -24,27 +24,27 @@ public class Template {
         this.name = name;
     }
 
-    public ArrayList<Transport> getTransports() {
+    public ArrayList<Transport_Template> getTransports() {
         return transports;
     }
 
-    public void setTransports(ArrayList<Transport> transports) {
+    public void setTransports(ArrayList<Transport_Template> transports) {
         this.transports = transports;
     }
 
-    public ArrayList<Addon> getAddons() {
+    public ArrayList<Addon_Template> getAddons() {
         return addons;
     }
 
-    public void setAddons(ArrayList<Addon> addons) {
+    public void setAddons(ArrayList<Addon_Template> addons) {
         this.addons = addons;
     }
 
-    public void addTransport_T(Transport transport) {
+    public void addTransport_T(Transport_Template transport) {
         this.transports.add(transport);
     }
 
-    public void addAddon_T(Addon addon) {
+    public void addAddon_T(Addon_Template addon) {
         this.addons.add(addon);
     }
 

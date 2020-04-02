@@ -1,10 +1,12 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
 public class Link {
+    @SerializedName("channel")
     @Expose
     ArrayList<Channel> channels = new ArrayList<>();
 
