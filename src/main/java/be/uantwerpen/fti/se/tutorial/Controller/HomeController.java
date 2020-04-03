@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+
 @Controller
 public class HomeController {
 
@@ -37,11 +39,28 @@ public class HomeController {
         Addon_Template testAddon_Template = new Addon_Template();
 
 
+        HashMap<String,Template> testTemplatesMap = new HashMap<>();
+        HashMap<String,Transport_Template> testTransportTemplateMap = new HashMap<>();
+        HashMap<String,DustBlock> testDustBlocksMap = new HashMap<>();
+        HashMap<String,Channel> testChannelMap = new HashMap<>();
+        HashMap<String,Channel> testChannelMap2 = new HashMap<>();
 
-        //nieuwe applicatie
+        //nieuwe applicatie + Maps
         testapplication.setName("TestApplicatie");
-        testapplication.addTemplate(testTemplate);
+        //testapplication.addTemplate(testTemplate);
+        testTemplatesMap.put("default-template",testTemplate);
+        testTransportTemplateMap.put("transport",testTransport_Template);
+        testDustBlocksMap.put("publisher",testBlock);
+        testDustBlocksMap.put("subscriber",testBlock2);
+        testChannelMap.put("publish-tcp",testChannel);
+        testChannelMap2.put("subscribe-tcp", testChannel2);
 
+        //HASHMAP BABY
+        testapplication.set_templatesMap(testTemplatesMap);
+        testapplication.setDustBlockHashMap(testDustBlocksMap);
+        testTemplate.setTransport(testTransport_Template);
+        testLink.setChannelHashMap(testChannelMap);
+        testLink2.setChannelHashMap(testChannelMap2);
 
         //nieuwe DUST block toevoegen aan applicatie en een link + naam geven
         testBlock.setName("publisher");
@@ -65,6 +84,10 @@ public class HomeController {
         testChannel2.addAddon(testAddon);
         testChannel.setTransport(testTransport);
         testChannel2.setTransport(testTransport2);
+
+        //template naam geven
+        testChannel.setTemplateName("default-template");
+        testChannel2.setTemplateName("default-template");
 
 
         //batch addon type en size geven

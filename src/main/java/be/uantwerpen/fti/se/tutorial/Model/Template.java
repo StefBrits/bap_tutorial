@@ -1,16 +1,29 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Template {
-    @Expose
-    String name = "example-template";
+
+    String name;
+
+
+
     @Expose
     ArrayList<Addon_Template> addons = new ArrayList<>();
+
+    @SerializedName("transport")
     @Expose
+    Transport_Template transport;
+
+    //HashMap<String,Transport_Template> transportTemplateHashMap = new HashMap<>();
+
+    //niet in json steken
     ArrayList<Transport_Template> transports = new ArrayList<>();
+
 
     public Template() {
 
@@ -48,4 +61,11 @@ public class Template {
         this.addons.add(addon);
     }
 
+    public Transport_Template getTransport() {
+        return transport;
+    }
+
+    public void setTransport(Transport_Template transport) {
+        this.transport = transport;
+    }
 }

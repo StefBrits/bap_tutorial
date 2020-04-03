@@ -8,8 +8,9 @@ import java.util.ArrayList;
 
 
 public class DustBlock {
-    @Expose
+
     String name = "default-block-name";
+    @SerializedName("links")
     @Expose
     Link link;
 

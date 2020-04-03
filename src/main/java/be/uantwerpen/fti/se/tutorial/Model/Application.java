@@ -1,15 +1,23 @@
 package be.uantwerpen.fti.se.tutorial.Model;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class Application {
     String name= "default-application-name";
+    @SerializedName("_templates")
     @Expose
+    HashMap<String, Template> _templatesMap = new HashMap<>();
+
+    @SerializedName("Deze string moet weg maar hier komen de blocks")
+    @Expose
+    HashMap<String, DustBlock> dustBlockHashMap = new HashMap<>();
+
     ArrayList<Template> _templates = new ArrayList<>();
-    @Expose
     ArrayList<DustBlock> dustBlocks = new ArrayList<>();
 
 
@@ -47,5 +55,29 @@ public class Application {
 
     public void addTemplate(Template template) {
         this._templates.add(template);
+    }
+
+    public ArrayList<DustBlock> getDustBlocks() {
+        return dustBlocks;
+    }
+
+    public void setDustBlocks(ArrayList<DustBlock> dustBlocks) {
+        this.dustBlocks = dustBlocks;
+    }
+
+    public HashMap<String, Template> get_templatesMap() {
+        return _templatesMap;
+    }
+
+    public void set_templatesMap(HashMap<String, Template> _templatesMap) {
+        this._templatesMap = _templatesMap;
+    }
+
+    public HashMap<String, DustBlock> getDustBlockHashMap() {
+        return dustBlockHashMap;
+    }
+
+    public void setDustBlockHashMap(HashMap<String, DustBlock> dustBlockHashMap) {
+        this.dustBlockHashMap = dustBlockHashMap;
     }
 }

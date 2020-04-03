@@ -4,10 +4,14 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Link {
-    @SerializedName("channel")
+    @SerializedName("channels")
     @Expose
+    HashMap<String,Channel> channelHashMap = new HashMap<>();
+
+
     ArrayList<Channel> channels = new ArrayList<>();
 
 
@@ -24,5 +28,13 @@ public class Link {
 
     public void addChannel(Channel channel) {
         this.channels.add(channel);
+    }
+
+    public HashMap<String, Channel> getChannelHashMap() {
+        return channelHashMap;
+    }
+
+    public void setChannelHashMap(HashMap<String, Channel> channelHashMap) {
+        this.channelHashMap = channelHashMap;
     }
 }

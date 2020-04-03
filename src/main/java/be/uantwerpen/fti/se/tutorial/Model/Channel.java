@@ -5,15 +5,19 @@ import com.google.gson.annotations.Expose;
 import java.util.ArrayList;
 
 public class Channel {
-    @Expose
+
+
     String name = "default-channel-name";
+    @Expose
+    String templateName;
     @Expose
     ArrayList<Addon> addons = new ArrayList<>();
     @Expose
     Transport transport;
-    //ArrayList<Template> templates = new ArrayList<>();
-    @Expose
+
     Template template;
+
+
 
 
     public Channel() {
@@ -66,5 +70,13 @@ public class Channel {
 
     public void setTemplate(Template template) {
         this.template = template;
+    }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
     }
 }

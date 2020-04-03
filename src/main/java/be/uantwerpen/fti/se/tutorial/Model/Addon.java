@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 public class Addon {
     @Expose
-    String type = "default-addon-type";
+    String type;
     @Expose
     int batch_size;
 
