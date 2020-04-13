@@ -44,6 +44,7 @@ public class HomeController {
         HashMap<String,DustBlock> testDustBlocksMap = new HashMap<>();
         HashMap<String,Channel> testChannelMap = new HashMap<>();
         HashMap<String,Channel> testChannelMap2 = new HashMap<>();
+        HashMap<String,Integer> testAddonMap = new HashMap<>();
 
         //nieuwe applicatie + Maps
         testapplication.setName("TestApplicatie");
@@ -54,6 +55,7 @@ public class HomeController {
         testDustBlocksMap.put("subscriber",testBlock2);
         testChannelMap.put("publish-tcp",testChannel);
         testChannelMap2.put("subscribe-tcp", testChannel2);
+        testAddonMap.put("batch_size",2);
 
         //HASHMAP BABY
         testapplication.set_templatesMap(testTemplatesMap);
@@ -61,6 +63,7 @@ public class HomeController {
         testTemplate.setTransport(testTransport_Template);
         testLink.setChannelHashMap(testChannelMap);
         testLink2.setChannelHashMap(testChannelMap2);
+        testAddon.setAddonMap(testAddonMap);
 
         //nieuwe DUST block toevoegen aan applicatie en een link + naam geven
         testBlock.setName("publisher");
@@ -92,7 +95,7 @@ public class HomeController {
 
         //batch addon type en size geven
         testAddon.setBatch_size(2);
-        testAddon.setType("Batch");
+        testAddon.setType("batch");
 
 
         testTransport.setPublish(true);

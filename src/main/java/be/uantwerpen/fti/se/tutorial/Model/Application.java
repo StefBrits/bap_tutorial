@@ -13,7 +13,7 @@ public class Application {
     @Expose
     HashMap<String, Template> _templatesMap = new HashMap<>();
 
-    @SerializedName("Deze string moet weg maar hier komen de blocks")
+    @SerializedName("")
     @Expose
     HashMap<String, DustBlock> dustBlockHashMap = new HashMap<>();
 

@@ -2,6 +2,8 @@ package be.uantwerpen.fti.se.tutorial.Model;
 
 import com.google.gson.annotations.Expose;
 
+import java.util.HashMap;
+
 public class Transport {
     @Expose
     String type;
